@@ -1,0 +1,10 @@
+services:
+  node:
+    build: ./docker/node
+    tty: true
+    volumes:
+      - ./.pnpm-store:/root/.local/share/pnpm/store
+      - ./web:/node/sample-nextjs-3d/web
+    ports:
+      - 3000:3000
+    working_dir: /node/sample-nextjs-3d/web
