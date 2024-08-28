@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --progress-bar-bg-color: black;
+  --progress-value-bg-color: white;
+  background-color: black;
+}
+
+progress {
+  height: 0.125rem;
+  appearance: none;
+}
+
+::-moz-progress-bar {
+  background-color: var(--progress-bar-bg-color);
+}
+
+::-webkit-progress-bar {
+  background-color: var(--progress-bar-bg-color);
+}
+
+::-webkit-progress-value {
+  background-color: var(--progress-value-bg-color);
+}

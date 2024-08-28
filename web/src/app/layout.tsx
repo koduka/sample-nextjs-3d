@@ -1,8 +1,9 @@
-import WarpLoading from '@/app/loading'
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import { Suspense } from 'react'
 import './globals.css'
+
+import type { Metadata } from 'next'
+
+import { Background3D } from '@/libs/components/Background3D'
+import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,7 +20,10 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className={inter.className}>
-        <Suspense fallback={<WarpLoading />}>{children}</Suspense>
+        <div className="relative h-screen w-screen">
+          <Background3D />
+        </div>
+        <div className="absolute top-0">{children}</div>
       </body>
     </html>
   )
